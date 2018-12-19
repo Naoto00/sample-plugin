@@ -1,0 +1,7 @@
+node_modules
+dist
+exchange.js
+.eslintrc.js
+.npmignore
+plugin.zip
+private.ppk

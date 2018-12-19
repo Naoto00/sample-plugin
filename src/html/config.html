@@ -1,0 +1,101 @@
+<section class="settings">
+  <h2 class="settings-heading">Settings for SAMPLE-Show-Exchange-plug-in</h2>
+  <!-- Accesskey settings -->
+  <div class="kintoneplugin-row">
+    <label class="kintoneplugin-label">
+      Access Key
+      <span class="kintoneplugin-require">*</span>
+    </label>
+    <p class="kintoneplugin-row">Input your API Access Key. Check it at the link below <br>
+      <a href="https://currencylayer.com/dashboard" target="_blank" rel="noopener noreferrer">https://currencylayer.com/dashboard</a>
+    </p>
+    <div class="kintoneplugin-input-outer">
+      <input class="kintoneplugin-input-text" type="text" id="accessKey">
+    </div>
+  </div>
+  <!-- Button space settings -->
+  <div class="kintoneplugin-row">
+    <div class="kintoneplugin-label">
+      Space
+      <span class="kintoneplugin-require">*</span>
+    </div>
+    <div class="kintoneplugin-select-outer">
+      <div class="kintoneplugin-select">
+        <select id="select_button_space">
+          <option>-----</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <!-- Number field to exchange settings -->
+  <div class="kintoneplugin-row">
+    <div class="kintoneplugin-label">
+      Number
+      <span class="kintoneplugin-require">*</span>
+    </div>
+    <div class="kintoneplugin-select-outer">
+      <div class="kintoneplugin-select">
+        <select id="select_before_exchange">
+          <option>-----</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <!-- Number field to display after exchanged settings -->
+  <div class="kintoneplugin-row">
+    <div class="kintoneplugin-label">
+      Number
+      <span class="kintoneplugin-require">*</span>
+    </div>
+    <div class="kintoneplugin-select-outer">
+      <div class="kintoneplugin-select">
+        <select id="select_after_exchange">
+          <option>-----</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <!-- currency settings -->
+  <div class="kintoneplugin-row">
+    <div class="kintoneplugin-label">
+      Currency
+    </div>
+    <div class="kintoneplugin-input-radio">
+      <span class="kintoneplugin-input-radio-item">
+        <input type="radio" name="radio" value="JPY" id="JPY">
+        <label for="JPY">JPY</label>
+      </span>
+      <span class="kintoneplugin-input-radio-item">
+        <input type="radio" name="radio" value="EUR" id="EUR">
+        <label for="EUR">EUR</label>
+      </span>
+      <span class="kintoneplugin-input-radio-item">
+        <input type="radio" name="radio" value="AUD" id="AUD">
+        <label for="AUD">AUD</label>
+      </span>
+      <span class="kintoneplugin-input-radio-item">
+        <input type="radio" name="radio" value="GBP" id="GBP">
+        <label for="GBP">GBP</label>
+      </span>
+    </div>
+  </div>
+  <!-- Historical date settings -->
+  <div class="kintoneplugin-row">
+    <div class="kintoneplugin-label">
+      Date
+      <span class="kintoneplugin-require">*</span>
+    </div>
+    <div class="kintoneplugin-select-outer">
+      <div class="kintoneplugin-select">
+        <select id="date">
+          <option>-----</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <!-- Cancel and Save buttons -->
+  <p class="kintoneplugin-row">
+    <button type="button" id="check-plugin-cancel" class="kintoneplugin-button-dialog-cancel">　Cancel　</button>
+    <button type="button" id="check-plugin-submit" class="kintoneplugin-button-dialog-ok">　Save　</button>
+  </p>
+</section>

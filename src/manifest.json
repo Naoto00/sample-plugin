@@ -1,0 +1,41 @@
+{
+  "manifest_version": 1,
+  "version": 1,
+  "type": "APP",
+  "desktop": {
+    "js": [
+      "https://js.cybozu.com/jquery/3.3.1/jquery.min.js",
+      "https://js.kintone.com/momentjs/2.22.1/moment.min.js",
+      "js/desktop.js"
+    ],
+    "css": [
+      "css/51-modern-default.css"
+    ]
+  },
+  "icon": "image/icon.png",
+  "config": {
+    "html": "html/config.html",
+    "js": [
+      "https://js.cybozu.com/jquery/3.3.1/jquery.min.js",
+      "js/config.js"
+    ],
+    "css": [
+      "css/51-modern-default.css",
+      "css/config.css"
+    ],
+    "required_params": [
+      "access_key",
+      "buttonSpace",
+      "beforeExchange",
+      "currencies",
+      "afterExchange",
+      "date"
+    ]
+  },
+  "name": {
+    "en": "SAMPLE-Show-Exchange-plug-in"
+  },
+  "description": {
+    "en": "SAMPLE-Show-Exchange-plug-in"
+  }
+}
