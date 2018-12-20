@@ -111,6 +111,26 @@ jQuery.noConflict();
         // Set input values when 'Save' button is clicked
         $('#check-plugin-submit').click(function() {
             var $targetCurrency = $('[name=radio]:checked');
+
+            // Check required fields
+            var requiredParams = [
+                $accessKey.val(),
+                $spaceDropDown.val(),
+                $bfrDropDown.val(),
+                $aftDropDown.val(),
+                $dateDropDown.val()
+            ];
+            for (var i in requiredParams) {
+                if (!requiredParams[i] || requiredParams[i] === '-----') {
+                    alert('Please set required field(s)');
+                    return;
+                }
+            }
+            if ($bfrDropDown.val() === $aftDropDown.val()) {
+                alert('両替前と両替後のフィールドは違う数値フィールドを選択してください');
+                return;
+            }
+
             var body = {
                 'access_key': $accessKey.val(),
                 'currencies': $targetCurrency.val()
