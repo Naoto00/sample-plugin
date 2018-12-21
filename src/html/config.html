@@ -3,11 +3,13 @@
   <!-- Accesskey settings -->
   <div class="kintoneplugin-row">
     <label class="kintoneplugin-label">
-      Access Key
+      API Access Key
       <span class="kintoneplugin-require">*</span>
     </label>
     <div class="kintoneplugin-row">
-      Input your API Access Key. Check it at the link below <br>
+      This plug-in uses currencylayer's API to obtain exchange rates. </ br>
+      To use currencylayer's API, an API access Key is needed. </ br>
+      Obtain your API Access key from the link below.
       <a href="https://currencylayer.com/dashboard" target="_blank" rel="noopener noreferrer">https://currencylayer.com/dashboard</a>
     </div>
     <div class="kintoneplugin-input-outer">
@@ -17,10 +19,10 @@
   <!-- Number field to exchange settings -->
   <div class="kintoneplugin-row">
     <label class="kintoneplugin-label">
-      Number
+      Source Currency
       <span class="kintoneplugin-require">*</span>
     </label>
-    <div class="kintoneplugin-row">XXX</div>
+    <div class="kintoneplugin-row">Select a number field that holds the currency value that needs to be exchanged.</div>
     <div class="kintoneplugin-select-outer">
       <div class="kintoneplugin-select">
         <select id="select_before_exchange">
@@ -32,10 +34,10 @@
   <!-- Number field to display after exchanged settings -->
   <div class="kintoneplugin-row">
     <label class="kintoneplugin-label">
-      Number
+      Output Currency
       <span class="kintoneplugin-require">*</span>
     </label>
-    <div class="kintoneplugin-row">XXX</div>
+    <div class="kintoneplugin-row">Select a number field to output the exchanged Source Currency into.</div>
     <div class="kintoneplugin-select-outer">
       <div class="kintoneplugin-select">
         <select id="select_after_exchange">
@@ -47,9 +49,9 @@
   <!-- currency settings -->
   <div class="kintoneplugin-row">
     <label class="kintoneplugin-label">
-      Currency
+      Exchange Currency
     </label>
-    <div class="kintoneplugin-row">XXX</div>
+    <div class="kintoneplugin-row">Select a currency to exchange the Source Currency into.</div>
     <div class="kintoneplugin-input-radio">
       <span class="kintoneplugin-input-radio-item">
         <input type="radio" name="radio" value="EUR" id="EUR" checked="">
@@ -72,10 +74,10 @@
   <!-- Historical date settings -->
   <div class="kintoneplugin-row">
     <label class="kintoneplugin-label">
-      Date
+      Exchange Date
       <span class="kintoneplugin-require">*</span>
     </label>
-    <div class="kintoneplugin-row">XXX</div>
+    <div class="kintoneplugin-row">Select a date field that stores the date of the exchange.</div>
     <div class="kintoneplugin-select-outer">
       <div class="kintoneplugin-select">
         <select id="date">
