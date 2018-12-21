@@ -25,7 +25,6 @@
     ],
     "required_params": [
       "access_key",
-      "buttonSpace",
       "beforeExchange",
       "currencies",
       "afterExchange",
