@@ -22,14 +22,16 @@ jQuery.noConflict();
                 if (!resp.properties.hasOwnProperty(key)) {continue;}
                 switch (resp.properties[key].type) {
                     case 'NUMBER':
-                        var $opText = $('<option value="' +
-                        resp.properties[key].code + '">' + resp.properties[key].label + '</option>');
+                        var $opText = $('<option></option>');
+                        $opText.attr('value', resp.properties[key].code);
+                        $opText.text(resp.properties[key].label);
                         $bfrDropDown.append($opText);
                         $aftDropDown.append($opText.clone());
                         break;
                     case 'DATE':
-                        var $opDate = $('<option value="' +
-                        resp.properties[key].code + '">' + resp.properties[key].label + '</option>');
+                        var $opDate = $('<option></option>');
+                        $opDate.attr('value', resp.properties[key].code);
+                        $opDate.text(resp.properties[key].label);
                         $dateDropDown.append($opDate);
                 }
             }
@@ -48,8 +50,8 @@ jQuery.noConflict();
 
     $(document).ready(function() {
         // Set default values
-        if (config.access_key) {
-            $accessKey.val(config.access_key);
+        if (config.accessKey) {
+            $accessKey.val(config.accessKey);
         }
         if (config.currencies) {
             $('#' + config.currencies).prop('checked', true);
@@ -84,14 +86,15 @@ jQuery.noConflict();
             };
             kintone.plugin.app.setProxyConfig(requestURL, 'GET', {}, body, function() {
                 kintone.plugin.app.setConfig({
-                    'access_key': $accessKey.val(),
+                    'accessKey': $accessKey.val(),
                     'beforeExchange': $bfrDropDown.val(),
                     'currencies': $targetCurrency.val(),
                     'afterExchange': $aftDropDown.val(),
                     'date': $dateDropDown.val()
+                }, function() {
+                    alert('Please update the app!');
+                    window.location.href = getSettingsUrl();
                 });
-                alert('Please update the app!');
-                window.location.href = getSettingsUrl();
             });
         });
         // Process when 'Cancel' is clicked

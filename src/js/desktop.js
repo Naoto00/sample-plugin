@@ -35,23 +35,26 @@ jQuery.noConflict();
             record[CONFIG.date].error = null;
             return event;
         }
+        record[CONFIG.beforeExchange].error = null;
+        record[CONFIG.date].error = null;
 
         var requestURL = 'http://www.apilayer.net/api/historical';
         requestURL += '?date=' + dtVal;
         kintone.plugin.app.proxy(PLUGIN_ID, requestURL, 'GET', {}, {}).then(function(resp) {
             if (!JSON.parse(resp[0]).success) {
-                return Promise.reject(new Error(JSON.parse(resp[0]).error.info));
+                return kintone.Promise.reject(new Error(JSON.parse(resp[0]).error.info));
             }
             var rate = bfrExchangeVal * JSON.parse(resp[0]).quotes['USD' + CONFIG.currencies];
-            record[CONFIG.beforeExchange].error = null;
-            record[CONFIG.date].error = null;
             record[CONFIG.afterExchange].value = rate;
-            var setRecord = {record};
+            var setRecord = {
+                'record': record
+            };
             kintone.app.record.set(setRecord);
         }).catch(function(err) {
             console.log(err);
-            alert('error');
+            alert(err);
         });
+        return event;
 
     });
 

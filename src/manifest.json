@@ -24,7 +24,7 @@
       "css/config.css"
     ],
     "required_params": [
-      "access_key",
+      "accessKey",
       "beforeExchange",
       "currencies",
       "afterExchange",
