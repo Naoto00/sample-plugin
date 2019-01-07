@@ -76,7 +76,7 @@ jQuery.noConflict();
                 }
             }
             if ($bfrDropDown.val() === $aftDropDown.val()) {
-                alert('両替前と両替後のフィールドは違う数値フィールドを選択してください');
+                alert('USD and Output Currency must be set as different fields');
                 return;
             }
 
