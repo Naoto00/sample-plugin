@@ -35,6 +35,6 @@
     "en": "SAMPLE-Show-Exchange-plug-in"
   },
   "description": {
-    "en": "SAMPLE-Show-Exchange-plug-in"
+    "en": "This plug-in uses the currencylayer API to obtain the USD exchange rate, which is used to calculate USD into another currency value. The exchange rate date is specified with a date field."
   }
 }

@@ -22,6 +22,9 @@ jQuery.noConflict();
         var bfrExchangeVal = record[CONFIG.beforeExchange].value;
         var dtisFuture = moment(dtVal).isAfter(moment());
         // validate date field and exchanged filed
+        if (record[CONFIG.date].error || record[CONFIG.beforeExchange].error || event.error) {
+            return event;
+        }
         if ((!dtVal || dtisFuture) && !bfrExchangeVal) {
             record[CONFIG.date].error = 'The date value is invalid';
             record[CONFIG.beforeExchange].error = 'The exchanged value is empty';
