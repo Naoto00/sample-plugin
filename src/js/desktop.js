@@ -54,7 +54,6 @@ jQuery.noConflict();
             };
             kintone.app.record.set(setRecord);
         }).catch(function(err) {
-            console.log(err);
             alert(err);
         });
         return event;
