@@ -14,27 +14,28 @@ jQuery.noConflict();
     return '/k/admin/app/flow?app=' + kintone.app.getId();
   }
 
+  function addOption($targetDropDown, resp) {
+    var $opText = $('<option></option>');
+    $opText.attr('value', resp.code);
+    $opText.text(resp.label);
+    $targetDropDown.append($opText);
+  }
+
   // Get information of each field
   function setDropDownForSpace() {
     kintone.api(kintone.api.url('/k/v1/preview/app/form/fields', true), 'GET',
       {'app': kintone.app.getId()}).then(function(resp) {
-      var $opText = $('<option></option>');
-      var $opDate = $('<option></option>');
       Object.keys(resp.properties).forEach(function(key) {
         if (!resp.properties.hasOwnProperty(key)) {
           return;
         }
         switch (resp.properties[key].type) {
           case 'NUMBER':
-            $opText.attr('value', resp.properties[key].code);
-            $opText.text(resp.properties[key].label);
-            $bfrDropDown.append($opText);
-            $aftDropDown.append($opText.clone());
+            addOption($bfrDropDown, resp.properties[key]);
+            addOption($aftDropDown, resp.properties[key]);
             break;
           case 'DATE':
-            $opDate.attr('value', resp.properties[key].code);
-            $opDate.text(resp.properties[key].label);
-            $dateDropDown.append($opDate);
+            addOption($dateDropDown, resp.properties[key]);
         }
       });
       // Set default values
@@ -76,8 +77,8 @@ jQuery.noConflict();
         'currencies': $targetCurrency.val()
       };
       var paramIsEmpty;
-      requiredParams.forEach(function(i) {
-        if (!requiredParams[i] || requiredParams[i] === '-----') {
+      requiredParams.forEach(function(reqParam) {
+        if (!reqParam || reqParam === '-----') {
           paramIsEmpty = true;
         }
       });
